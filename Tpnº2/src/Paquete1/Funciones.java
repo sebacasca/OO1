@@ -84,28 +84,15 @@ public class Funciones {
 	
 	//traer fecha (parametro Stringr, devuelve calendar)
 	public static GregorianCalendar traerFecha(String fecha){
-		String aux1="",aux2="",aux3="";
-		int a,m,d;
+		String anio,mes,dia;
 		
-		for(int i=0; i<fecha.length();i++){
-			if(i==0 || i==1){
-				aux1 +=fecha.charAt(i);
-			}else{if(i==3 || i==4){
-				aux2 +=fecha.charAt(i);}
-				else{if(i==6 || i==7 || i==8 || i==9){
-					aux3+=fecha.charAt(i);}
-				}
-			}
-		}
-		
-		a = Integer.parseInt(aux3);
-		m = Integer.parseInt(aux2);
-		d = Integer.parseInt(aux1);
-		m-=1;
-		GregorianCalendar date= new GregorianCalendar(a,m,d);
+		dia=fecha.substring(0,2);
+		mes=fecha.substring(3,5);
+		anio=fecha.substring(6);
+		GregorianCalendar date= new GregorianCalendar(Integer.parseInt(anio),(Integer.parseInt(mes)-1),Integer.parseInt(dia));
 		return date;
-	}
-		
+		}
+
 	
 	// fecha corta(sobrecargado)
 	
