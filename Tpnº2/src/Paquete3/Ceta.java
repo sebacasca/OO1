@@ -8,11 +8,12 @@ public class Ceta {
 	private GregorianCalendar fecha;
 	private double valorTransferencia;
 	
-	private Contribuyente vendedor = new Contribuyente (idContribuyente, apellido, nombres, dni, cuil);
+	//ACA ABAJO, FIJATE LOS CAMBIOSSS!!!!
+	private Contribuyente vendedor = new Contribuyente (1, "apellido", "nombres", 12345678, "cuil");
     //private Contribuyente comprador= new Contribuyente();
     
 	
-    private Rodado automotor=new Rodado();
+    //private Rodado automotor=new Rodado();
 
 	//constructor
 	
