@@ -73,7 +73,8 @@ public class Contribuyente {
 				cont=cont+1;
 				}
 			if (cont!=8){
-				return correcto=false;
+				correcto=false;
+				System.out.print("DNI invalido");
 			}
 			return correcto;	
 			}
