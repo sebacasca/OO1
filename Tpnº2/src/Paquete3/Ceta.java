@@ -1,8 +1,6 @@
 package Paquete3;
 import java.util.GregorianCalendar;
 
-import Paquete3.Contribuyente;
-
 public class Ceta {
 	private long idCeta;
 	private GregorianCalendar fecha;
@@ -13,7 +11,7 @@ public class Ceta {
     //private Contribuyente comprador= new Contribuyente();
     
 	
-    //private Rodado automotor=new Rodado();
+    private Rodado automotor = new Rodado("asd124","Ford Falcon '85");
 
 	//constructor
 	
@@ -21,7 +19,7 @@ public class Ceta {
 		this.idCeta=idCeta;
 		this.fecha=fecha;
 		this.valorTransferencia=valorTransferencia;
-		vendedor.setContribuyente(idContribuyente);
+		//vendedor.setContribuyente(idContribuyente);
 		
 		
 		
@@ -31,4 +29,4 @@ public class Ceta {
 		this.vendedor=vendedor;
 
 
-}
+}}
