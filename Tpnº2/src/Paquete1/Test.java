@@ -9,7 +9,7 @@ public class Test {
 		
 		//GregorianCalendar fecha = new GregorianCalendar(2000,(12-1),8);
 		//Traer fecha parametro string, devuelve gregoriancalendar
-		GregorianCalendar fecha = Funciones.traerFecha("08/12/2000");
+		GregorianCalendar fecha = Funciones.traerFecha("23/12/2000");
 		//traer fecha
 		GregorianCalendar fecha2 = Funciones.traerFecha(2014, 9, 7);
 		GregorianCalendar fecha3 = Funciones.traerFecha(2014, 9, 7);
@@ -48,7 +48,7 @@ public class Test {
 		System.out.println("----------------------------");
 		
 		//Fecha Valida
-		System.out.println("Es Fecha Valida?: "+Funciones.fechaValida(1990, 7, 23));
+		System.out.println("Es Fecha Valida?: "+Funciones.fechaValida(2030, 7, 23));
 		System.out.println("Es Fecha Valida?: "+Funciones.fechaValida(1990, 14, 23));
 		System.out.println("Es Fecha Valida?: "+Funciones.fechaValida(2014, 2, 29));
 		System.out.println("Es Fecha Valida?: "+Funciones.fechaValida(2000, 2, 29));
@@ -94,7 +94,8 @@ public class Test {
 		
 		// Limito 2 decimales
 		System.out.println("Numero con 2 decimales 2,998: "+Funciones.aproximar2Decimal(2.998));
-		System.out.println("Numero con 2 decimales 1,546: "+Funciones.aproximar2Decimal(1.546));
+		System.out.println("Numero con 2 decimales 23,546: "+Funciones.aproximar2Decimal(23.546));
+		System.out.println("Numero con 2 decimales 1,542: "+Funciones.aproximar2Decimal(1.542));
 		System.out.println("----------------------------");
 		
 	}

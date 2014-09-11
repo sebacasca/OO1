@@ -1,7 +1,6 @@
 package Paquete1;
 import java.util.GregorianCalendar;
 import java.util.Calendar;
-import java.text.DecimalFormat;
 
 public class Funciones {
 
@@ -33,14 +32,10 @@ public class Funciones {
 		public static boolean fechaValida(int a, int m, int d){
 			
 			GregorianCalendar fechaActual= new GregorianCalendar();
-			//int d= f.get(GregorianCalendar.DAY_OF_MONTH);
-			//int m= f.get(GregorianCalendar.MONTH);
-			//int a= f.get(GregorianCalendar.YEAR);
 			int anioActual= fechaActual.get(GregorianCalendar.YEAR);
-			//m=m+1;
 			boolean correcto= true;
 			
-			if(a <= 0 && a >= anioActual){
+			if(a <= 0 || a > anioActual){
 				correcto=false;}
 			
 			if(m<0 || m>12){
@@ -85,11 +80,17 @@ public class Funciones {
 	//traer fecha (parametro Stringr, devuelve calendar)
 	public static GregorianCalendar traerFecha(String fecha){
 		String anio,mes,dia;
+		GregorianCalendar date;
 		
 		dia=fecha.substring(0,2);
 		mes=fecha.substring(3,5);
 		anio=fecha.substring(6);
-		GregorianCalendar date= new GregorianCalendar(Integer.parseInt(anio),(Integer.parseInt(mes)-1),Integer.parseInt(dia));
+		
+		if(fechaValida(Integer.parseInt(anio),Integer.parseInt(mes)-1,Integer.parseInt(dia))){
+			date= new GregorianCalendar(Integer.parseInt(anio),(Integer.parseInt(mes)-1),Integer.parseInt(dia));
+		}else {	System.out.println("La fecha es invalida. se usara la fecha actual");
+				date = new GregorianCalendar();}
+		
 		return date;
 		}
 
@@ -130,10 +131,9 @@ public class Funciones {
 		int dia = f.get(GregorianCalendar.DAY_OF_WEEK);
 		boolean dh = true;
 		
-		if( dia==1 || dia==7){
-			dh=false;
-		}
-		return(dh);	
+		if( dia==1 || dia==7){dh=false;}
+		
+		return dh;	
 		}
 	
 	//traer diadelasemana
@@ -210,15 +210,8 @@ public class Funciones {
 	public static boolean sonFechasIguales(GregorianCalendar f1, GregorianCalendar f2){
 		boolean correcto=true;
 		
-		if(traerDia(f1)!=traerDia(f2)){
-			correcto=false;}
-			else{
-				if(traerMes(f1)!=traerMes(f2)){
-					correcto=false;}
-				else{
-					if(traerAnio(f1)!=traerAnio(f2)){
-						correcto=false;}
-					}
+		if(traerDia(f1)!=traerDia(f2) || traerMes(f1)!=traerMes(f2) || traerAnio(f1)!=traerAnio(f2)){
+				correcto=false;
 			}
 		
 	return(correcto);	
@@ -260,15 +253,31 @@ public class Funciones {
 	
 	
 	
-	 // Aproxi 2 decimales
-		public static String aproximar2Decimal (double numero){
+	 // Aproximar 2 decimales
+		public static Double aproximar2Decimal (double numero){
+			double comparador = numero;
+			int punto = 0;
+			comparador+=0.005;
 			
-			DecimalFormat df = new DecimalFormat("0.00");
-					
-			return df.format(numero);
+			String cadena = String.valueOf(numero);
+			String cadena2= String.valueOf(comparador);
 			
+			for(int i=0;i<cadena.length();i++){
+				if(cadena.charAt(i)=='.'){
+					punto = i;
+				}
+			}
+			
+			if(cadena.charAt(punto+2) != cadena2.charAt(punto+2)){
+				cadena2 = cadena2.substring(0,punto+3);
+				numero = Double.parseDouble(cadena2);
+			}else {
+					cadena2 = cadena2.substring(0,punto+3);
+					numero = Double.parseDouble(cadena2);
+					}
+			
+			return numero;
 		}
+		
 	
-
-
 }

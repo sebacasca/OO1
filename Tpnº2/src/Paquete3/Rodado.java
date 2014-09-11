@@ -8,8 +8,9 @@ public class Rodado {
 	private String marcamodelo;
 	
 	public Rodado(String patente, String mm){
-			this.setDominio(patente);
-			this.marcamodelo=mm;
+		
+			setDominio(patente);
+			setMarcamodelo(mm);
 	}
 	
 	protected void setId(){
@@ -76,19 +77,13 @@ public class Rodado {
 	}
 
 
-	public long getIdRodado() {
-		return idRodado;
-	}
+	public long getIdRodado() {return idRodado;}
 
 
-	public void setIdRodado(long idRodado) {
-		this.idRodado = idRodado;
-	}
+	public void setIdRodado(long idRodado) { this.idRodado = idRodado;}
 
 
-	public String getDominio() {
-		return dominio;
-	}
+	public String getDominio() {return dominio;}
 
 
 	public void setDominio(String dominio) {
@@ -99,14 +94,10 @@ public class Rodado {
 	}
 
 
-	public String getMarcamodelo() {
-		return marcamodelo;
-	}
+	public String getMarcamodelo() {return marcamodelo;}
 
 
-	public void setMarcamodelo(String marcamodelo) {
-		this.marcamodelo = marcamodelo;
-	}
+	public void setMarcamodelo(String marcamodelo){this.marcamodelo = marcamodelo;}
 	
 	
 	
