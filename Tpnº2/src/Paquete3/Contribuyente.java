@@ -67,14 +67,14 @@ public class Contribuyente {
 		
 	public static boolean validarDni(long dni){
 			boolean correcto=true;
-			Long.valueOf(dni);
 			String documento=Long.toString(dni);
-			
-				if(documento.length()<0 || documento.length()>8){
-					correcto=false;}
-					System.out.print("DNI invalido.");
+		
+				if(documento.length()!= 8){
+					correcto=false;
+					System.out.print("DNI invalido.");}
 			return correcto;	
 			}
+			
 			
 		
 		
