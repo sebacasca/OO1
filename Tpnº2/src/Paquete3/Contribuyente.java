@@ -70,7 +70,7 @@ public class Contribuyente {
 			Long.valueOf(dni);
 			String documento=Long.toString(dni);
 			
-				if(documento.length()<0 && documento.length()>8){
+				if(documento.length()<0 || documento.length()>8){
 					correcto=false;}
 					System.out.print("DNI invalido.");
 			return correcto;	
