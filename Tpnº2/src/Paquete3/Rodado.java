@@ -7,6 +7,7 @@ public class Rodado {
 	private String dominio;
 	private String marcamodelo;
 	
+	
 	public Rodado(String patente, String mm){
 		
 			setDominio(patente);

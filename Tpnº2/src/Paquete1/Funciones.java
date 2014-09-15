@@ -255,28 +255,29 @@ public class Funciones {
 	
 	 // Aproximar 2 decimales
 		public static Double aproximar2Decimal (double numero){
-			double comparador = numero;
 			int punto = 0;
-			comparador+=0.005;
+			numero+=0.005;
 			
 			String cadena = String.valueOf(numero);
-			String cadena2= String.valueOf(comparador);
+			punto = buscaChar(cadena,'.');
+			cadena = cadena.substring(0,punto+3);
+			numero = Double.parseDouble(cadena);
+				
+			return numero;
+		}
+		
+		//Busca el punto en el decimal		
+		public static int buscaChar(String cadena,char b){
+			int punto=0;
 			
 			for(int i=0;i<cadena.length();i++){
-				if(cadena.charAt(i)=='.'){
+				if(cadena.charAt(i)==b){
 					punto = i;
 				}
 			}
 			
-			if(cadena.charAt(punto+2) != cadena2.charAt(punto+2)){
-				cadena2 = cadena2.substring(0,punto+3);
-				numero = Double.parseDouble(cadena2);
-			}else {
-					cadena2 = cadena2.substring(0,punto+3);
-					numero = Double.parseDouble(cadena2);
-					}
+		return punto; 
 			
-			return numero;
 		}
 		
 	
