@@ -280,36 +280,5 @@ public class Funciones {
 			
 		}
 		
-		public static boolean validarNum(char c){
-			char [] numero={'0','1','2','3','4','5','6','7','8','9'};
-			boolean correcto = false;
-			int i=0;
-			
-			while( i<10 && !correcto){
-				if(c == numero[i]){
-					correcto = true;
-				}
-				i++;}
-			
-				
-			return correcto;
-			}
-		
-		public static boolean validarLetra(char c){
-			char [] letra={'A','B','C','D','E','F','G','H','I','J','K','L','M','N','O','P','Q','R','S','T','U','V','W','X','Y','Z'};
-			boolean correcto = false;
-			int i=0;
-					
-			while( i<25 && !correcto){
-				if(c == letra[i]){
-					correcto = true;
-				}
-				i++;
-			}
-				
-			
-		return correcto;
-		}
-		
 	
 }
