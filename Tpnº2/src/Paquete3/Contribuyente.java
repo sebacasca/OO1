@@ -65,7 +65,20 @@ public class Contribuyente {
 	
 	//metodo validar DNI:
 		
-		public boolean validarDni(long doc){
+	public static boolean validarDni(long dni){
+			boolean correcto=true;
+			String documento=Long.toString(dni);
+		
+				if(documento.length()!= 8){
+					correcto=false;
+					System.out.print("DNI invalido.");}
+			return correcto;	
+			}
+			
+			
+		
+		
+		/*public boolean validarDni(long doc){
 			boolean correcto=true;
 			int cont=0;
 			
@@ -77,7 +90,7 @@ public class Contribuyente {
 				System.out.print("DNI invalido");
 			}
 			return correcto;	
-			}
+			}*/
 		
 	//metodo validar Cuil:
 		
