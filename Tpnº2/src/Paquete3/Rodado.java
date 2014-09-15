@@ -1,17 +1,20 @@
-package Paquete3;	
+package Paquete3;
+import Paquete1.Funciones;
 
 public class Rodado {
 
 	private static long idSiguiente=0;
 	private long idRodado;
 	private String dominio;
-	private String marcamodelo;
+	private String marca;
+	private int modelo;
 	
 	
-	public Rodado(String patente, String mm){
+	public Rodado(String patente, String marca, int model){
 		
 			setDominio(patente);
-			setMarcamodelo(mm);
+			setMarca(marca);
+			setModelo(model);
 	}
 	
 	protected void setId(){
@@ -28,11 +31,11 @@ public class Rodado {
 		if(patente.length() == 6){
 			for(int i=0;i<=5;i++){
 				if(i==0 || i==1 || i==2){
-					if(!(validarLetra(patente.charAt(i)))){
+					if(!(Funciones.validarLetra(patente.charAt(i)))){
 						correcto = false;}
 				}
 				if(i==3 || i==4 || i==5){
-					if(!(validarNum(patente.charAt(i)))){
+					if(!(Funciones.validarNum(patente.charAt(i)))){
 						correcto = false;
 					}
 				}
@@ -43,39 +46,6 @@ public class Rodado {
 	return correcto;
 	}
 	
-	
-	public boolean validarNum(char c){
-		char [] numero={'0','1','2','3','4','5','6','7','8','9'};
-		boolean correcto = false;
-		int i=0;
-		
-		while( i<11 && !correcto){
-			if(c == numero[i]){
-				correcto = true;
-			}
-			i++;}
-		
-			
-		return correcto;
-		}
-		
-	
-	
-	public boolean validarLetra(char c){
-		char [] letra={'A','B','C','D','E','F','G','H','I','J','K','L','M','N','O','P','Q','R','S','T','U','V','W','X','Y','Z'};
-		boolean correcto = false;
-		int i=0;
-				
-		while( i<26 && !correcto){
-			if(c == letra[i]){
-				correcto = true;
-			}
-			i++;
-		}
-			
-		
-	return correcto;
-	}
 
 
 	public long getIdRodado() {return idRodado;}
@@ -94,12 +64,22 @@ public class Rodado {
 		}else System.out.println("El dominio es incorrecto.");
 	}
 
+	public String getMarca() {
+		return marca;
+	}
 
-	public String getMarcamodelo() {return marcamodelo;}
+	public void setMarca(String marca) {
+		this.marca = marca;
+	}
+
+	public int getModelo() {
+		return modelo;
+	}
+
+	public void setModelo(int modelo) {
+		if(modelo >= 1930){this.modelo = modelo;
+			}else System.out.println("El modelo no es valido.");
+	}
 
 
-	public void setMarcamodelo(String marcamodelo){this.marcamodelo = marcamodelo;}
-	
-	
-	
 }
