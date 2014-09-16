@@ -10,6 +10,7 @@ public class test {
 		auto.setModelo(1923);
 		auto.setDominio("we1312");
 		auto.setModelo(1932);
+		System.out.println(auto.toString());
 
 	}
 

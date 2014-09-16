@@ -80,6 +80,12 @@ public class Rodado {
 		if(modelo >= 1930){this.modelo = modelo;
 			}else System.out.println("El modelo no es valido.");
 	}
+	
+	public String toString(){
+		String datos = "Dominio: "+this.dominio+"\nMarca: "+this.marca+"\nModelo: "+this.modelo;
+		
+		return datos;
+	}
 
 
 }
