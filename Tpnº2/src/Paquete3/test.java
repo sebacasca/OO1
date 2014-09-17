@@ -1,15 +1,19 @@
 package Paquete3;
 import Paquete3.*;
 import java.util.GregorianCalendar;
-public class Test {
+
+
+public class test {
 
 	public static void main(String[] args) {
 		
-		Contribuyente c1= new Contribuyente(1, "apellido", "nombres", 12345678, "cuil", 'f');
+		GregorianCalendar fechahoy = new GregorianCalendar();
 		
-		Ceta f2 = new Ceta (2, fecha, 19990);
+		//Contribuyente c1= new Contribuyente(1, "apellido", "nombres", 12345678, "cuil", 'f');
 		
-		System.out.print (c1.getsexo());
+		Ceta f2 = new Ceta (2, fechahoy , 1990);
+		
+		//System.out.print (c1.getsexo());
 		
 		System.out.print(f2.traerFormulario());
 		

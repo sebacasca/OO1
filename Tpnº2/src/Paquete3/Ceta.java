@@ -13,7 +13,7 @@ public class Ceta {
 	private Contribuyente vendedor = new Contribuyente (1, "apellido", "nombres", 12345678, "cuil",'f');
     private Contribuyente comprador= new Contribuyente(2,"apellido","nombres", 87654321,"cuil",'m');
     
-    private Rodado automotor = new Rodado("asd124","Ford Falcon", 85);
+    private Rodado automotor = new Rodado("asd124","Ford Falcon", 1985);
     
     private Ceta f1= new Ceta(1,fecha,1234);
 
@@ -62,5 +62,5 @@ public class Ceta {
 		
 	return formulario;//to string para comprador y vendedor(HACER)	
 		
-	}
+	}}
 
