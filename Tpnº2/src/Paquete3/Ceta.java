@@ -15,7 +15,7 @@ public class Ceta {
     
     private Rodado automotor = new Rodado("asd124","Ford Falcon", 1985);
     
-    private Ceta f1= new Ceta(1,fecha,1234);
+    //private Ceta f1= new Ceta(1,fecha,1234);QUE HACE ESTO ACA? xd
 
 	//constructor
 	
