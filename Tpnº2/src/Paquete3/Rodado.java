@@ -68,13 +68,9 @@ public class Rodado {
 		return marca;
 	}
 
-	public void setMarca(String marca) {
-		this.marca = marca;
-	}
+	public void setMarca(String marca) {this.marca = marca;	}
 
-	public int getModelo() {
-		return modelo;
-	}
+	public int getModelo(){return modelo;}
 
 	public void setModelo(int modelo) {
 		if(modelo >= 1930){this.modelo = modelo;
