@@ -1,7 +1,4 @@
 package Paquete3;
-import Paquete3.*;
-import java.util.GregorianCalendar;
-
 
 public class test {
 
