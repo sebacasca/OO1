@@ -7,30 +7,16 @@ public class test {
 
 	public static void main(String[] args) {
 		
-		GregorianCalendar fechahoy = new GregorianCalendar();
+		String [] valoresrodado ={"kaw342","Ford","32133.32","1935"};
+		String [] valorescomprador={"Simpson","Homero","20123456782","m","12345678"};
+		String [] valoresvendedor={"Colman","Gary","27343112312","m","87654321"};
 		
-		//Contribuyente c1= new Contribuyente(1, "apellido", "nombres", 12345678, "cuil", 'f');
 		
-		Ceta f2 = new Ceta (2, fechahoy , 1990);
-		
-		//System.out.print (c1.getsexo());
+		Ceta f2 = new Ceta (valorescomprador,valoresvendedor,valoresrodado);
 		
 		System.out.print(f2.traerFormulario());
 		
-		
-		//System.out.println(Contribuyente.validarDni(1234));
 	
-		//System.out.println(Long.toString(6666));
-		
-		//System.out.println(1111111));
-		
-		Rodado auto = new Rodado("ssw123","jaosdjas",1931);
-		auto.setDominio("sdwe21");
-		auto.setModelo(1923);
-		auto.setDominio("we1312");
-		auto.setModelo(1932);
-		System.out.println(auto.toString());
-		
 		
 	
 	}
