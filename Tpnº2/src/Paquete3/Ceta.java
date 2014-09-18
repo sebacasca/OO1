@@ -15,21 +15,18 @@ public class Ceta {
     
 
 	//constructor
-	
 	public  Ceta (String [] compra, String [] vende,String [] rodad){
 		
 		setId();
-		this.fecha=new GregorianCalendar();
-		this.valorTransferencia=Double.parseDouble(rodad[2]);
-		auto = new Rodado(rodad[0],rodad[1],Integer.parseInt(rodad[3]));
-		comprador = new Contribuyente (compra[0],compra[1],Long.parseLong(compra[4]), compra[2],compra[3].charAt(0));
-		vendedor = new Contribuyente (vende[0],vende[1],Long.parseLong(vende[4]), vende[2], vende[3].charAt(0));
-		
+		setFecha(new GregorianCalendar());
+		setValorTransferencia(Double.parseDouble(rodad[2]));
+		setRodado(rodad);
+		setVendedor(vende);
+		setComprador(compra);
 	}
 		
 	
 	//getters y setters
-	
 	protected void setId(){
 							idSiguiente++;
 							setIdCeta(idSiguiente);}
@@ -46,6 +43,18 @@ public class Ceta {
 	
 	public void setValorTransferencia(double valorTransferencia){
 		this.valorTransferencia=valorTransferencia;}
+
+	public void setRodado(String [] movil){
+		auto = new Rodado(movil[0], movil[1],Integer.parseInt(movil[3]));
+	}
+	
+	public void setVendedor(String [] vende){
+		vendedor = new Contribuyente (vende[0],vende[1],Long.parseLong(vende[4]), vende[2], vende[3].charAt(0));
+	}
+	
+	public void setComprador(String [] compra){
+		comprador = new Contribuyente (compra[0],compra[1],Long.parseLong(compra[4]), compra[2],compra[3].charAt(0));
+	}
 	
 	
 	// traer formulario
@@ -53,7 +62,7 @@ public class Ceta {
 	public String traerFormulario(){
 		String formulario="";
 		
-		formulario +="Fecha: "+Funciones.traerFechaCorta(fecha)+ "\nIdCeta: "+idCeta+ "\n-----\nVendedor:  "/*+vendedor.toString()*/+ "\ncomprador: "+/*comprador.toString()+ */
+		formulario +="Fecha: "+Funciones.traerFechaCorta(fecha)+ "\nIdCeta: "+idCeta+ "\n-----\nVendedor:  "+vendedor.toString()+ "\ncomprador: "+comprador.toString()+
 		"\nValor de la transaferencia:"+valorTransferencia+
 		"\n-----\nDatos del rodado:\n"+auto.toString();
 		
