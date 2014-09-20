@@ -44,8 +44,8 @@ public class Ceta {
 	public void setValorTransferencia(double valorTransferencia){
 		this.valorTransferencia=valorTransferencia;}
 
-	public void setRodado(String [] movil){
-		auto = new Rodado(movil[0], movil[1],Integer.parseInt(movil[3]));
+	public void setRodado(String [] rodad){
+		auto = new Rodado(rodad[0], rodad[1],Integer.parseInt(rodad[3]));
 	}
 	
 	public void setVendedor(String [] vende){
@@ -62,11 +62,10 @@ public class Ceta {
 	public String traerFormulario(){
 		String formulario="";
 		
-		formulario +="Fecha: "+Funciones.traerFechaCorta(fecha)+ "\nIdCeta: "+idCeta+ "\n-----\nVendedor:  "+vendedor.toString()+ "\ncomprador: "+comprador.toString()+
+		formulario +="Fecha: "+Funciones.traerFechaCorta(fecha)+ "\nIdCeta: "+idCeta+ "\n-----\nVENDEDOR:  \n"+vendedor.toString()+ "\nCOMPRADOR: \n"+comprador.toString()+"\n-----"+
 		"\nValor de la transaferencia:"+valorTransferencia+
-		"\n-----\nDatos del rodado:\n"+auto.toString();
+		"\n-----\nDATOS DEL RODADO:\n"+auto.toString();
 		
 	return formulario;	
-		
-	}}
-
+	}
+}
