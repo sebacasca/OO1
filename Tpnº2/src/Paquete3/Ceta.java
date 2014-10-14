@@ -1,5 +1,6 @@
 package Paquete3;
 import java.util.GregorianCalendar;
+
 import Paquete1.Funciones;
 
 public class Ceta {
@@ -12,9 +13,20 @@ public class Ceta {
 	private Contribuyente comprador;
 	private Contribuyente vendedor;
 	
-    
-
-	//constructor
+    //constructor1
+	
+	public Ceta (Contribuyente v, Contribuyente c, Rodado r, double p) throws Exception{
+		setId();
+		setFecha(new GregorianCalendar());
+		setValorTransferencia(p);
+		setRodado(r);
+		setVendedor(v);
+		setComprador(c);		
+		
+	}
+	
+	//constructor2
+	
 	public  Ceta (String [] compra, String [] vende,String [] rodad){
 		
 		setId();
@@ -27,6 +39,7 @@ public class Ceta {
 		
 	
 	//getters y setters
+	
 	protected void setId(){
 							idSiguiente++;
 							setIdCeta(idSiguiente);}
@@ -56,7 +69,24 @@ public class Ceta {
 		comprador = new Contribuyente (compra[0],compra[1],Long.parseLong(compra[4]), compra[2],compra[3].charAt(0));
 	}
 	
+	//getter y setters constructor1
 	
+	public void setRodado(Rodado r){
+		this.auto=r;
+	}
+	
+	public void setVendedor(Contribuyente v){
+		this.vendedor=v;
+		}
+	
+	public void setComprador(Contribuyente c) throws Exception{
+		//System.out.println("!(vendedor.equals(c))"+!(vendedor.equals(c)));
+		if(!(vendedor.equals(c))){
+			throw new Exception("Error comprador y vendedor son los mismos Contribuyentes");
+		}
+		this.comprador=c;
+	}
+		
 	// traer formulario
 	
 	public String traerFormulario(){
@@ -68,4 +98,6 @@ public class Ceta {
 		
 	return formulario;	
 	}
+
+	
 }

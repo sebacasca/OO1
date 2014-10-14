@@ -14,6 +14,7 @@ public class Contribuyente {
 	//constructor
 	
 	public Contribuyente(String apellido, String nombres, long dni, String cuil, char sexo) {
+			this.setIdContribuyente();	
 			this.apellido=apellido;
 			this.nombres=nombres;
 			this.setdni(dni);
@@ -23,14 +24,11 @@ public class Contribuyente {
 
 	//getters y setters
 		
-		protected void setId(){
-			idSiguiente++;
-			setIdContribuyente(idSiguiente);}
-	
 		public long getIdContribuyente() {return idContribuyente;}
 
 
-		public void setIdContribuyente(long idContribuyente) { this.idContribuyente = idContribuyente;}
+		protected void setIdContribuyente() {idSiguiente++;
+		this.idContribuyente = idSiguiente;}
 
 	
 		public String getapellido(){
@@ -124,15 +122,13 @@ public class Contribuyente {
 		return correcto;
 }
 			
+	//metodo validar DNI:
 			
-		//metodo validar DNI:
-			
-			public static boolean validarDni(long dni){
-				boolean correcto=true;
-				String documento=Long.toString(dni);
-			
-					if(documento.length()!= 8){
-						correcto=false;}
+		public boolean validarDni(long dni){
+			boolean correcto=true;
+			String documento=Long.toString(dni);
+				if(documento.length()!= 8){
+					correcto=false;}
 				return correcto;	
 				}
 			
@@ -143,5 +139,18 @@ public class Contribuyente {
 			String cadena = "Apellido: "+this.apellido+"\nNombres: "+this.nombres+"\nDNI: "+this.dni+"\nCUIL: "+this.cuil+"\nSexo: "+this.sexo+"\n";
 			
 			return cadena;}
+		
+		//equals
+		
+		public boolean equals(Contribuyente c){
+			boolean correcto=true;
+			
+			int comparadorcuil=this.cuil.compareTo(c.getcuil());
+			boolean comparadordni=this.dni ==(c.getdni());
+			
+			if(comparadorcuil!=1 && comparadordni!=false){
+				correcto=false;
+			}
+			return correcto;}
 		
 }

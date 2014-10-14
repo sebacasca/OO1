@@ -61,7 +61,7 @@ public class Rodado {
 		if(validarDominio(dominio)){
 			dominio=dominio.toUpperCase();
 			this.dominio=dominio;
-		}else System.out.println("El dominio es incorrecto.");
+		}//else System.out.println("El dominio es incorrecto.");
 	}
 
 	public String getMarca() {
@@ -74,7 +74,7 @@ public class Rodado {
 
 	public void setModelo(int modelo) {
 		if(modelo >= 1930){this.modelo = modelo;
-			}else System.out.println("El modelo no es valido.");
+			}//else System.out.println("El modelo no es valido.");
 	}
 	
 	public String toString(){
@@ -82,5 +82,7 @@ public class Rodado {
 		
 		return datos;
 	}
+	
+	
 
 }
