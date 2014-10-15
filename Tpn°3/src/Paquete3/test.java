@@ -7,13 +7,11 @@ public class test {
 		
 		try{
 		
-		/*Estudiante e1 = new Estudiante("ASd","Nom",23232334,"23/12/1990");
-		System.out.println(e1.toString());*/
 		GestionEstudiante prueba =new GestionEstudiante();
-		prueba.agregarEstudiante("Hola", "Hola!", 34567218, "23/12/1990");
-		prueba.agregarEstudiante("Hola", "Hola!", 34567218, "23/12/1990");
-		prueba.agregarEstudiante("Hola", "Hola!", 34567218, "23/12/1990");
-		prueba.agregarEstudiante("Hola", "Hola!", 34567218, "23/12/1990");
+		prueba.agregarEstudiante("Hola", "Hola!", 34567218, 1934,11,12);
+		prueba.agregarEstudiante("Hola", "Hola!", 34567218, 1987,2,13);
+		prueba.agregarEstudiante("Hola", "Hola!", 34567218, 1973,4,14);
+		prueba.agregarEstudiante("Hola", "Hola!", 34567218, 1945,6,5);
 		prueba.mostrarestudiante();
 		
 		

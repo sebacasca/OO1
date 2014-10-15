@@ -9,11 +9,11 @@ public class GestionEstudiante {
 	List<Estudiante> listaestudiante= new ArrayList<Estudiante>();
 	Estudiante estudiante1;
 	
-	public boolean agregarEstudiante(String apellido,String nombre,long dni, String fn)throws Exception{
+	public boolean agregarEstudiante(String apellido,String nombre,long dni, int a, int m, int d)throws Exception{
 		
 		boolean valido=true;
 		
-		estudiante1 = new Estudiante(apellido,nombre,dni,fn);
+		estudiante1 = new Estudiante(apellido,nombre,dni, a ,m ,d);
 		if(!listaestudiante.add(estudiante1)){
 			throw new Exception("No se pudo agregar.");
 		}

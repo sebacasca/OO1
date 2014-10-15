@@ -12,12 +12,12 @@ public class Estudiante {
 	private GregorianCalendar fechanacimiento;
 	
 	
-	public Estudiante(String apellido,String nombre,long dni, String fn)throws Exception{
+	public Estudiante(String apellido,String nombre,long dni, int a, int m, int d)throws Exception{
 		setId();
 		this.apellido=apellido;
 		this.nombre=nombre;
 		setDni(dni);
-		setFechanacimiento(fn);
+		setFechanacimiento(a,m,d);
 	}
 	
 	protected void setId(){
@@ -34,8 +34,8 @@ public class Estudiante {
 		}else throw new Exception("Dni invalido.");
 	}
 	
-	public void setFechanacimiento(String f){
-		this.fechanacimiento=Funciones.traerFecha(f);
+	public void setFechanacimiento(int d, int m, int a){
+		this.fechanacimiento=Funciones.traerFecha(d,m,a);
 	}
 	
 	public String toString(){

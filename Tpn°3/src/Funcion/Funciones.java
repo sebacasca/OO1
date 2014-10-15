@@ -73,7 +73,7 @@ public class Funciones {
 		GregorianCalendar fecha=null;
 		
 			
-		if (fechaValida(a,m,d)) fecha= new GregorianCalendar(a,m,d);
+		if (fechaValida(a,m,d)) fecha= new GregorianCalendar(a,m-1,d);
 		return fecha;
 		}
 	
