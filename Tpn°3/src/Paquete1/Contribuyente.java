@@ -157,8 +157,7 @@ public class Contribuyente {
 		
 		int comparadorcuil=this.cuil.compareTo(c.getcuil());
 		
-		boolean comparadordni=this.dni ==(c.getdni());
-			if(comparadorcuil!=1 && comparadordni!=false){
+		if(comparadorcuil>0){
 				correcto=false;}
 		
 			return correcto;}

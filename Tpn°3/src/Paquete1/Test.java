@@ -69,6 +69,21 @@ public class Test {
 			System.out.println(e.getMessage());
 			}
 		
+		try{
+			System.out.println("\nEscenario 5: ");
+			Contribuyente vende= new Contribuyente("Pruebapellido", "Cosme", 12345678, "20356861818", 'm');
+			Contribuyente compra1= new Contribuyente("Pruebapellido2", "Cosme2", 12345678, "20356861818", 'm');
+			Contribuyente compra2= new Contribuyente("Pruebapellido3", "Cosme3", 12345678, "20324617400", 'm');
+			Rodado rod= new Rodado("kas123", "Ford", 1982);
+			Ceta ce= new Ceta(vende, compra1, rod, 12341.32);
+			System.out.println(ce.traerFormulario());
+			
+			if(vende.equals(compra1)){System.out.println("Son iguales.");}else System.out.println("Son distintos.");
+			if(vende.equals(compra2)){System.out.println("Son iguales.");}else System.out.println("Son distintos.");
+			}
+		catch (Exception e){
+			System.out.println(e.getMessage());
+			}
 		
 	}
 
