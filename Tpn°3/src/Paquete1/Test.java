@@ -70,7 +70,7 @@ public class Test {
 			}
 		
 		try{
-			System.out.println("\nEscenario 5: ");
+			System.out.println("\nEscenario 6: ");
 			Contribuyente vende= new Contribuyente("Pruebapellido", "Cosme", 12345678, "20356861818", 'm');
 			Contribuyente compra1= new Contribuyente("Pruebapellido2", "Cosme2", 12345678, "20356861818", 'm');
 			Contribuyente compra2= new Contribuyente("Pruebapellido3", "Cosme3", 12345678, "20324617400", 'm');
