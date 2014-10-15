@@ -4,7 +4,7 @@ import Funcion.Funciones;
 
 public class Estudiante {
 
-	protected int idSiguiente=0;
+	private static int idSiguiente=0;
 	private int idestudiante;
 	private long dni;
 	private String apellido;
