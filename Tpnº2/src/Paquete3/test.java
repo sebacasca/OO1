@@ -29,8 +29,37 @@ public class Test {
 		
 		System.out.println("Formulario 3:\n"+f3.traerFormulario()+"\n\n");
 		
+		System.out.println("-----------------------\n");
 		
-	
+		Contribuyente vendedor= new Contribuyente("Cascardo","Sebastian",32461740,"20324617400",'m');
+		
+		Contribuyente comprador= new Contribuyente("Palazzo","Gabriel",37611873,"20376118737",'m');
+		
+		Rodado auto=new Rodado ("ABC123", "Ford Focus",2012);
+		
+		try{
+		Ceta Formulario4= new Ceta (vendedor ,comprador, auto, 75990.0);	
+		
+		System.out.println("Formulario 4:\n"+Formulario4.traerFormulario()+"\n\n");}
+		
+		catch(Exception e){System.out.println(e.getMessage());}
+		
+		
+		Contribuyente vendedor2= new Contribuyente("Cascardo","Sebastian",32461740,"20324617400",'m');
+		
+		Contribuyente comprador2= new Contribuyente("Cascardo","Sebastian",32461740,"20324617400",'m');
+		
+		Rodado auto2=new Rodado ("ABC123", "Ford Focus",2012);
+		
+		try{
+		System.out.println("Formulario 5:");
+		Ceta Formulario5= new Ceta (vendedor2 ,comprador2, auto2, 75990.0);	
+		
+		System.out.println("Formulario 5:\n"+Formulario5.traerFormulario()+"\n\n");}
+		
+		catch(Exception e){System.out.println(e.getMessage());}
+		
+		
 	}
 
 }

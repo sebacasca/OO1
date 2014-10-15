@@ -1,4 +1,6 @@
-package Paquete3;
+package Paquete1;
+
+//import Paquete3.Contribuyente;
 
 public class Contribuyente {
 	
@@ -13,8 +15,7 @@ public class Contribuyente {
 	
 	//constructor
 	
-	public Contribuyente(String apellido, String nombres, long dni, String cuil, char sexo) {
-			this.setIdContribuyente();	
+	public Contribuyente(String apellido, String nombres, long dni, String cuil, char sexo)throws Exception {
 			this.apellido=apellido;
 			this.nombres=nombres;
 			this.setdni(dni);
@@ -24,11 +25,14 @@ public class Contribuyente {
 
 	//getters y setters
 		
+		protected void setId(){
+			idSiguiente++;
+			setIdContribuyente(idSiguiente);}
+	
 		public long getIdContribuyente() {return idContribuyente;}
 
 
-		protected void setIdContribuyente() {idSiguiente++;
-		this.idContribuyente = idSiguiente;}
+		public void setIdContribuyente(long idContribuyente) { this.idContribuyente = idContribuyente;}
 
 	
 		public String getapellido(){
@@ -59,37 +63,36 @@ public class Contribuyente {
 			this.nombres=nombres;
 		}
 		
-		public void setdni(long dni){
-			if(validarDni(dni)){
+		public void setdni(long dni) throws Exception{
+			if(Funcion.validarDni(dni)){
 				this.dni=dni;}
+			else throw new Exception ("Error: El DNI no es valido.");
 		}
 		
 	
-		public void setsexo(char sexo){
+		public void setsexo(char sexo) throws Exception{
 			String sex= String.valueOf(sexo);
 			sex = sex.toUpperCase();
 			
-			if ((sex.length()!=1) && ((sex.charAt(0)!= 'F') || (sex.charAt(0)!= 'M'))){
-				System.out.print("Genero no valido.");}
-			else{
+			if ((sex.length()==1) && ((sex.charAt(0)== 'F') || (sex.charAt(0)== 'M'))){
 				sexo=sex.charAt(0);
 				this.sexo=sexo;}
+			else throw new Exception ("Error: El Genero no es valido.");
 		}
 		
-		public void setcuil(String cuil){
-			if(!validarCuil(cuil)){
-				this.cuil="Cuil invalido.";}
-			else this.cuil=cuil;
+		public void setcuil(String cuil)throws Exception{
+			if(validarCuil(cuil)){
+			 this.cuil=cuil;}
+			else throw new Exception ("Error: El CUIL no es valido.");
 			
 		}
 		
 		
-		public boolean validarCuil(String cuil){
+		public boolean validarCuil(String cuil)throws Exception{
 			
 			int [] lista={5,4,3,2,7,6,5,4,3,2};
 			int numero,valor1=0,valor2, valor3;
 			boolean correcto=true;
-			
 			
 			if (cuil.length()==11){
 				
@@ -115,42 +118,52 @@ public class Contribuyente {
 						correcto=false;}
 					break;
 					}
+			
+			String digito=cuil.substring(0, 1);
+			int dig = Integer.parseInt(digito);
+			
+			switch(dig){
+			case 20:
+				if(sexo!='M'){
+					throw new Exception("El genero es invalido");}
+			break;
+			case 27:
+				if (sexo!='F'){
+					throw new Exception("El genero es invalido");}
+			break;
+			
+			/*default:
+				if((sexo!='M') || (sexo !='F')){
+					throw new Exception("El genero es invalido");}*/
 				}
+			}
+			
 			else correcto=false;
 	
-			
-		return correcto;
-}
-			
-	//metodo validar DNI:
-			
-		public boolean validarDni(long dni){
-			boolean correcto=true;
-			String documento=Long.toString(dni);
-				if(documento.length()!= 8){
-					correcto=false;}
-				return correcto;	
-				}
-			
+		return correcto;}
+		
 		
 		//redefino los metodos
 		
 		public String toString(){
-			String cadena = "Apellido: "+this.apellido+"\nNombres: "+this.nombres+"\nDNI: "+this.dni+"\nCUIL: "+this.cuil+"\nSexo: "+this.sexo+"\n";
+			String cadena = "\nApellido: "+this.apellido+"\nNombres: "+this.nombres+"\nDNI: "+this.dni+"\nCUIL: "+this.cuil+"\nSexo: "+this.sexo+"\n";
 			
 			return cadena;}
 		
 		//equals
 		
 		public boolean equals(Contribuyente c){
-			boolean correcto=true;
-			
-			int comparadorcuil=this.cuil.compareTo(c.getcuil());
-			boolean comparadordni=this.dni ==(c.getdni());
-			
+		boolean correcto=true;
+		
+		int comparadorcuil=this.cuil.compareTo(c.getcuil());
+		
+		boolean comparadordni=this.dni ==(c.getdni());
 			if(comparadorcuil!=1 && comparadordni!=false){
-				correcto=false;
-			}
+				correcto=false;}
+		
 			return correcto;}
+		
+	
+		
 		
 }
