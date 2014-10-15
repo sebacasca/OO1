@@ -311,5 +311,14 @@ public class Funciones {
 		return correcto;
 		}
 		
+		public static boolean validarDni(long dni){
+			boolean correcto=true;
+			String documento=Long.toString(dni);
+		
+				if(documento.length()!= 8){
+					correcto=false;}
+			return correcto;	
+			}
+		
 	
 }
