@@ -20,21 +20,6 @@ public class Estudiante {
 		setFechanacimiento(a,m,d);
 	}
 	
-	public Estudiante(Estudiante e)throws Exception{
-		this.idestudiante= e.getIdestudiante();
-		this.apellido=e.getApellido();
-		this.nombre= e.getNombre();
-		setDni(e.getDni());
-		setFechanacimiento(e.getFechanacimiento());
-	}
-	
-	public Estudiante(int id, String apellido,String nombre,long dni, int a, int m, int d)throws Exception{
-		this.idestudiante=id;
-		this.apellido=apellido;
-		this.nombre=nombre;
-		setDni(dni);
-		setFechanacimiento(a,m,d);
-	}
 	
 	protected void setId(){
 		idSiguiente++;
@@ -68,14 +53,27 @@ public class Estudiante {
 		}else throw new Exception("Dni invalido.");
 	}
 	
-	public void setFechanacimiento(GregorianCalendar f){
+	
+	
+	public void setApellido(String apellido) {
+		this.apellido = apellido;
+	}
+
+	public void setNombre(String nombre) {
+		this.nombre = nombre;
+	}
+
+	public void setFechanacimiento(GregorianCalendar f)throws Exception{
 		int d = f.get(GregorianCalendar.DAY_OF_MONTH);
 		int m = f.get(GregorianCalendar.MONTH);
 		int a = f.get(GregorianCalendar.YEAR);
 		setFechanacimiento(d,m,a);
 	}
 	
-	public void setFechanacimiento(int d, int m, int a){
+	public void setFechanacimiento(int d, int m, int a)throws Exception{
+		if(Funciones.traerFecha(d,m,a)==null){
+			throw new Exception("La fecha no es valida");
+		}
 		this.fechanacimiento=Funciones.traerFecha(d,m,a);
 	}
 	
